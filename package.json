@@ -2,14 +2,23 @@
   "name": "weather-widget",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" "
+    "test": "echo \"Error: no test specified\" ",
+    "serv": "live-server --port=8090",
+    "build": "webpack"
+
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@babel/core": "^7.8.6",
+    "@babel/preset-env": "^7.8.6",
     "@fortawesome/fontawesome-free": "^5.12.1",
+    "babel-loader": "^8.0.6",
+    "css-loader": "^3.4.2",
+    "live-server": "^1.2.1",
+    "style-loader": "^1.1.3",
     "webpack": "^4.41.6",
     "webpack-cli": "^3.3.11"
   }

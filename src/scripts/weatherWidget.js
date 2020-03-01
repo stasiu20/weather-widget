@@ -5,17 +5,12 @@ class WeatherWidget extends HTMLElement {
 
     constructor() {
         super()
-        let head = document.getElementsByTagName('HEAD')[0]
         let shadow = this.attachShadow({mode: 'open'})
 //External Stylesheet
         const linkElem = document.createElement('link')
         linkElem.setAttribute('rel', 'stylesheet')
         linkElem.setAttribute('type', 'text/css')
-        linkElem.setAttribute('href', 'widgets/weather-widget/style.css')
-//Font Awsome
-        const fontsAwesome = document.createElement('link')
-        fontsAwesome.setAttribute('rel', 'stylesheet')
-        fontsAwesome.setAttribute('href', 'widgets/weather-widget/fontawesome-free-5.12.1-web/css/all.css')
+        linkElem.setAttribute('href', 'src/styles/style.css')
 //Container Div
         let container = document.createElement('div')
         container.setAttribute('id', 'container')
@@ -41,7 +36,6 @@ class WeatherWidget extends HTMLElement {
         let currentDesc = document.createElement('p')
         currentDesc.setAttribute('class', 'current-weather-description')
 
-        head.insertAdjacentElement('afterbegin',fontsAwesome)
         shadow.appendChild(linkElem)
         shadow.appendChild(container)
         container.appendChild(currentCardCont)
@@ -77,11 +71,11 @@ const currentWeather = (data, shadow) => {
         let desc = shadow.querySelector('.current-weather-description')
 
         let temperatureIcon = document.createElement('i')
-        temperatureIcon.setAttribute('class', "fas fa-thermometer-three-quarters")
+        temperatureIcon.setAttribute('class', "fa fa-thermometer-three-quarters")
         let temperatureSpan = document.createElement('span')
         temperatureSpan.setAttribute('class', 'info-span')
 
-        info.innerHTML = '<i class="fas fa-thermometer-three-quarters"></i>'
+        info.innerHTML = '<i class="fa fa-thermometer-three-quarters"></i>'
         let skycons = new Skycons({"color": "dark-grey"})
         header.textContent = 'Current Conditions'
         desc.textContent = data.currently.summary
