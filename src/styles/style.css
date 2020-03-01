@@ -1,0 +1,28 @@
+#container{
+    display: grid;
+    text-align: center;
+    border: 2px solid black;
+}
+.current-weather-container{
+    width: 30%;
+}
+
+.left-card-container{
+    width: 50%;
+}
+
+.current-weather{
+    display: flex;
+}
+
+.current-weather-info{
+    margin-top: 7px;
+    padding-top: 7px;
+    width: 50%;
+}
+
+.current-weather-icon{
+    margin: auto;
+    width: 80%;
+    margin-top: 10px;
+}
